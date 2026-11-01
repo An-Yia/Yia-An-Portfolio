@@ -853,7 +853,7 @@ const P1_TOP=`<h1 class="soptitle dhpt">Shen Yu’s Dream Adventure: Learning Ta
 <li><b>2020 · Dancing in the Heaven</b>: apsara postures, cave patterns and local food, translated into a fashion collection.</li><li><b>2023 · Voile hammock</b>: the apsaras’ ribbons become a garment-structure that holds the body.</li>
 <li><b>2025 · Shen Yu’s Dream Adventure</b>: narrative, worldbuilding, characters, costumes and talismans researched from Dunhuang manuscripts.</li>
 <li><b>Next · Breathing Ribbons</b>: a soma design concept that returns to the apsaras’ ribbons, now moving with the wearer’s breath.</li></ul></div></div></section>
-<section class="dhsec"><h2>Playable prototype</h2><div class="arlplay" style="justify-content:flex-start;margin:0"><a class="pri" href="https://claude.ai/artifact/VDYGFays5suBz9oHjCKH2W">Play the talisman lesson ↗</a><a href="https://claude.ai/artifact/KcLz9MfHkjTNzideJm7Uwh">Play Chapter 1 ↗</a></div></section>
+<section class="dhsec"><h2>Playable prototype</h2><div class="arlplay" style="justify-content:flex-start;margin:0"><a class="pri" href="https://an-yia.github.io/Yia-An-Portfolio/games/talisman/">Play the talisman lesson ↗</a><a href="https://an-yia.github.io/Yia-An-Portfolio/games/chapter1/">Play Chapter 1 ↗</a></div></section>
 
 </div>`;
 const SO_BOARD=`<section class="soinsp" aria-labelledby="soInspH">
@@ -1070,7 +1070,7 @@ function renderSection(sec){
 }
 function renderCase(s){
   const c=s.case;
-  if(c.embed) return `<h2 class="case__title" id="sCaseTitle" style="position:absolute;width:1px;height:1px;overflow:hidden">${esc(s.t)}</h2><iframe class="arl" scrolling="no" title="All Roads Lead Home case study" data-arl></iframe><div class="arlplay"><a class="pri" href="https://claude.ai/artifact/Pdwh11WMiBXWHCmyLkeBV1">Play the game ↗</a><a href="https://claude.ai/artifact/TZGhNzKFus48snLkaELZGe">Read the full proposal ↗</a></div>`;
+  if(c.embed) return `<h2 class="case__title" id="sCaseTitle" style="position:absolute;width:1px;height:1px;overflow:hidden">${esc(s.t)}</h2><iframe class="arl" scrolling="no" title="All Roads Lead Home case study" data-arl></iframe><div class="arlplay"><a class="pri" href="https://an-yia.github.io/Yia-An-Portfolio/games/all-roads/">Play the game ↗</a><a href="https://an-yia.github.io/Yia-An-Portfolio/games/all-roads-proposal/">Read the full proposal ↗</a></div>`;
   return `${c.p1?P1_TOP:''}${c.p2?P2_TOP:''}${c.hero?`<h1 class="soptitle">Sigma Oba <small>Project 03</small></h1><header class="sohero" aria-label="${esc(s.t)}">
       <svg class="sohero__t" viewBox="-12 0 934 100" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="27" stroke-linecap="round" stroke-linejoin="round"><path transform="translate(0 0)" d="M86 12H32Q13 12 13 31Q13 50 32 50H68Q87 50 87 69Q87 88 68 88H14"/><path transform="translate(118 0)" d="M13 12V88"/><path transform="translate(162 0)" d="M86 12H32Q13 12 13 31V69Q13 88 32 88H68Q87 88 87 69V58H58"/><path transform="translate(280 0)" d="M13 88V31Q13 12 32 12H68Q87 12 87 31V88M50 40V70"/><path transform="translate(398 0)" d="M13 88V31Q13 12 32 12H68Q87 12 87 31V88M44 56H87"/><path transform="translate(574 0)" d="M13 40V69Q13 88 32 88H68Q87 88 87 69V31Q87 12 68 12H36"/><path transform="translate(692 0)" d="M13 12V88M47 12H66Q84 12 84 31Q84 50 66 50H47M47 50H68Q87 50 87 69Q87 88 68 88H47"/><path transform="translate(810 0)" d="M13 88V31Q13 12 32 12H68Q87 12 87 31V88M44 56H87"/></g></svg>
       <img class="sohero__face sohero__face--a" src="${SO_FACE_A}" alt="Sigma face">

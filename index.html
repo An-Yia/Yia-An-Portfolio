@@ -696,20 +696,13 @@ const STUDIES = [
    case:{
      tools:'Planned: webcam pose tracking · AI-generated avatar · projector',
      meta:[['Category','Master’s research · Interactive installation'],['Institution','Sapienza University of Rome'],['Year','2026–27'],['Status','Ongoing'],['Team size','1'],['Role','Concept, Historical & Iconographic Research, Design']],
-     tags:['Lamaštu amulets','algorithmic apotropaism','digital ritual','computational embodiment','speculative reconstruction','material culture'],
+     tags:['apotropaic amulets','Mesopotamia','embodied interaction','digital heritage','digital care'],
      intro:'Mesopotamian Lamaštu Amulets, Bodily Vulnerability, and Algorithmic Apotropaism in Virtual Avatars',
      sub:'What happens when ancient protective rituals for the vulnerable body are encoded into algorithmic systems?',
      sections:[
        {kind:'text', h:'Overview', body:[
          'In ancient Mesopotamia, the demoness Lamaštu embodied the fear of reproductive trauma. Incantation texts describe her harming pregnant women, causing miscarriage, devouring newborns and bringing deadly fever.',
          'To protect mother and infant, amulet plaques carved with exorcistic imagery were worn on the body or hung beside the birthing bed: a magical defensive infrastructure against bodily vulnerability and the fear of death.']},
-       {kind:'figs', h:'The object', min:300, items:[
-          {src:'https://commons.wikimedia.org/wiki/Special:FilePath/Plaque_against_Lamashtu-AO_22205-IMG_9974.JPG?width=1200', alt:'Bronze Lamaštu plaque held by Pazuzu, Louvre AO 22205', ratio:'4/3', cap:'Bronze plaque against Lamaštu, held by Pazuzu. Neo-Assyrian, Louvre AO 22205. Photo: Rama, CC BY-SA 3.0 FR, via Wikimedia Commons.'},
-          {src:'https://commons.wikimedia.org/wiki/Special:FilePath/Lamashtu_plaque_9165.jpg?width=1200', alt:'Lower register of the Lamaštu plaque', ratio:'4/3', cap:'Lower register: Lamaštu with snakes, suckling animals, on a boat. Louvre AO 22205. Photo: Rama, CC BY-SA, via Wikimedia Commons.'}
-        ]},
-       {kind:'figs', h:'Amulets behind glass', narrow:true, items:[
-          {slot:'Author’s photograph: Egyptian amulets, EDGE GALLERY, Shenzhen', ratio:'4/3', cap:'Amulets on metal rods behind glass, separated from the body. Author’s photograph, Shenzhen.'}
-        ]},
        {kind:'text', h:'Algorithmic apotropaism', body:'Grounded in Near Eastern archaeology and religious iconography, the research proposes “algorithmic apotropaism”: the technological translation and critical re-enactment of ancient ritual defence mechanisms in digital environments.'},
        {kind:'text', h:'Research question', body:'When sacred, taboo and protective practices are encoded into standardised algorithmic systems, do computational media care for and repair historical memory, or do they risk a decontextualised extraction of embodied traumatic experience?'},
        {kind:'steps', h:'Method', items:[
@@ -718,11 +711,6 @@ const STUDIES = [
           ['Interactive installation','Webcam-based pose tracking combined with an AI-generated historical avatar.'],
           ['Reflection','How these gestures are perceived and translated through digital mediation, with attention to synthetic agency and the ethics of digital care.']
         ]},
-       {kind:'figs', h:'Sketches', min:420, items:[
-          {src:'img/lamastu/gestures.svg', alt:'Three gesture sketches: trembling, curling, warding off', cap:'Gesture studies with tracked body points. Some gestures are speculative reconstructions.'},
-          {src:'img/lamastu/installation.svg', alt:'Installation schema', cap:'Installation schema: webcam, pose tracking, projected avatar. Concept, not yet built.'}
-        ]},
-       {kind:'figs', h:'Video', items:[{slot:'2-minute video documentation of the installation', ratio:'16/9', cap:'Coming after the installation is built.'}]},
        ['Status',['Master’s dissertation, Sapienza University of Rome (expected March 2027).','Installation in development.']]
      ]}}
 ];
@@ -1046,7 +1034,6 @@ function renderSection(sec){
   if (sec.kind==='model') return `<section class="case__sec case__sec--wide"><h3>${esc(sec.h)}</h3><p class="case__body">${fmt(sec.intro)}</p>
     <figure class="model"><img src="${MODEL_IMG}" alt="Sigma Oba handheld model: front, side and back views" width="1536" height="1024" loading="lazy"><figcaption class="cap">Front · Side · Back</figcaption></figure>
     ${sec.link?`<a class="model__link" href="${sec.link}">${esc(sec.linkText)}</a>`:''}</section>`;
-  if (sec.kind==='figs') return `<section class="case__sec case__sec--wide"><h3>${esc(sec.h)}</h3>${sec.intro?`<p class="case__body">${fmt(sec.intro)}</p>`:''}<div style="display:grid;${sec.narrow?'max-width:560px;':''}grid-template-columns:repeat(auto-fit,minmax(min(100%,${sec.min||320}px),1fr));gap:clamp(16px,2vw,28px)">${sec.items.map(it=>it.src?`<figure style="margin:0"><img src="${it.src}" alt="${esc(it.alt||'')}" loading="lazy" style="width:100%;display:block;background:#f2f2f2;${it.ratio?`aspect-ratio:${it.ratio};object-fit:cover`:''}"><figcaption class="credit" style="margin-top:10px">${fmt(it.cap)}</figcaption></figure>`:`<figure style="margin:0">${slot(it.slot,it.ratio)}<figcaption class="credit" style="margin-top:10px">${fmt(it.cap)}</figcaption></figure>`).join('')}</div></section>`;
   if (sec.kind==='faces') return `<section class="case__sec case__sec--wide"><h3>${esc(sec.h)}</h3><p class="case__body">${fmt(sec.intro)}</p>
     <div class="faces">${['neutral','surprise','wink','scream'].map(k=>`<figure><img src="${FACES[k]}" alt="Sigma Oba face: ${k}" width="600" height="600" loading="lazy"><figcaption class="cap">${k}</figcaption></figure>`).join('')}</div></section>`;
   if (sec.kind==='series') return `<section class="case__sec case__sec--wide"><h3>${esc(sec.h)}</h3><p class="case__body">${fmt(sec.intro)}</p>
